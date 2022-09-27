@@ -1,0 +1,44 @@
+package com.app.config;
+
+public class Test {
+    public static void method(int a,int b,int m) {
+        if(m==0)
+            return;
+        System.out.println(a);
+        method(b, a+b, --m);
+    }
+
+    public static void main(String[] args) {
+
+        A a=new B();
+        A b=new A();
+        method(0, 1, 10);
+    }
+
+}
+class A{
+
+}
+class B extends A{
+
+}
+
+
+LocalDateTime now = LocalDateTime.now();
+
+
+        if(otp.getOtp()==otp2.getOtp()&&now.isBefore(otp2.getDateCreated().plusMinutes(10)))
+        {
+            User user= userRepo.getByEmail(otp.getEmail());
+            otpRepo.delete(otp2);
+            return jwt.generateJwtToken(user);
+
+        }
+
+
+public class OTP {
+    @Id
+    private String email;
+    private int otp;
+    private LocalDateTime dateCreated;
+}
