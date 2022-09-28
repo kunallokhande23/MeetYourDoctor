@@ -183,14 +183,6 @@ Display Payment UI & Checkout
 4. WhatsApp Business API Integration
 5. Virtual Consultation for Patients and Doctors 
 
-<div align="center">
-</br>
-
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=tuannguyen2504&theme=tokyonight&langs_count=6&layout=compact&hide=tsql,html,pug,css" alt="Tuấn Nguyễn's Github Stats">
-
-</br>
-</div>
-
 ## Support
 
 For support, email kunallokhande23@gmail.com
