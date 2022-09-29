@@ -69,7 +69,7 @@ function Pay() {
         amount = amount * 100;
 
         const options = {
-            key: "rzp_test_avqPqvBNedSxPH", // Enter the Key ID generated from the Dashboard
+            key: "rzp_test", // Enter the Key ID generated from the Dashboard
             amount: amount.toString(),
             currency: "INR",
             name: `Dr. ${doctor.firstName} ${doctor.lastName}`,
