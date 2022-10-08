@@ -12,6 +12,10 @@
 	<img title="AWS" alt="AWS" src="https://raw.githubusercontent.com/Thomas-George-T/Thomas-George-T/master/assets/aws.svg" width="60" height="40" style="vertical-align:down; margin:4px"/>&emsp;
 </div>
 
+# Website
+<a href="http://www.meetyourdoctor.co.in" target="_blank">Visit Website</a><br>
+<a href="http://meetyourdoctor.co.in:8080/swagger-ui/index.html" target="_blank">Check Rest API</a><br>
+
 # Features
 1. Localization based on Geography
 2. JWT based Authentication
@@ -54,7 +58,7 @@
 
 ## Swagger Url
 ```bash
-http://localhost:8080/swagger-ui/index.html
+http://meetyourdoctor.co.in:8080/swagger-ui/index.html
 ```
 
 
