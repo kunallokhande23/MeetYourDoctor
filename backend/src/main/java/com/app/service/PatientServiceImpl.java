@@ -48,25 +48,30 @@ public class PatientServiceImpl implements IPatientService {
 	@Override
 	public String uploadProfilePicture(long patientId, MultipartFile imageFile) throws IOException {
 		Patient patient = patientRepository.getReferenceById(patientId);
-		Clock clock = Clock.systemDefaultZone();
-		long milliSeconds=clock.millis();
-		String completePath = baseFolder + File.separator + patientId +milliSeconds + imageFile.getOriginalFilename();
-		System.out.println("complete path " + completePath);
-		System.out.println("Copied no of bytes "
-				+ Files.copy(imageFile.getInputStream(), Paths.get(completePath), StandardCopyOption.REPLACE_EXISTING));
-		// save complete path to the image in db
-		patient.setProfilePicture(completePath);
+//		Clock clock = Clock.systemDefaultZone();
+//		long milliSeconds=clock.millis();
+//		String completePath = baseFolder + File.separator + patientId +milliSeconds + imageFile.getOriginalFilename();
+//		System.out.println("complete path " + completePath);
+//		System.out.println("Copied no of bytes "
+//				+ Files.copy(imageFile.getInputStream(), Paths.get(completePath), StandardCopyOption.REPLACE_EXISTING));
+//		// save complete path to the image in db
+//		patient.setProfilePicture(completePath);
+		patient.setProfileImgDB(imageFile.getBytes());
 		return "Profile Picture uploaded";
 	}
 
 	@Override
 	public byte[] restoreImage(long id) throws Exception {
-		Patient persistentPatient = patientRepository.findById(id).orElseThrow(()->new Exception("Patient Not Found"));
+		Patient persistentPatient = patientRepository.findById(id)
+				.orElseThrow(() -> new Exception("Patient Not Found"));
 		System.out.println(persistentPatient.getProfilePicture());
-		return Files.readAllBytes(Paths.get(persistentPatient.getProfilePicture()));
+//		return Files.readAllBytes(Paths.get(persistentPatient.getProfilePicture()));
 //		return Files.readAllBytes(Paths.get(imagePath));
+
+		// new line added for to fetch from db
+		return persistentPatient.getProfileImgDB();
 	}
-	
+
 	@Override
 	public byte[] restoreImageByPath(String imagePath) throws IOException {
 		String completPath = baseFolder + File.separator + imagePath;
@@ -76,7 +81,8 @@ public class PatientServiceImpl implements IPatientService {
 	@Override
 	public PatientDTO getPatientDetails(String email) throws Exception {
 		PatientDTO patientDTO = new PatientDTO();
-		mapper.map(patientRepository.findByLoginEmail(email).orElseThrow(()->new Exception("Patient Not Found")), patientDTO);
+		mapper.map(patientRepository.findByLoginEmail(email).orElseThrow(() -> new Exception("Patient Not Found")),
+				patientDTO);
 		return patientDTO;
 	}
 
@@ -96,7 +102,5 @@ public class PatientServiceImpl implements IPatientService {
 	public void deletePatient(long patientId) {
 		patientRepository.deleteById(patientId);
 	}
-
-	
 
 }

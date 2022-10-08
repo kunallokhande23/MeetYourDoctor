@@ -29,8 +29,8 @@ public class Patient {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long patientId;
-	
-	@Column(length = 35)
+
+	@Column(length = 35, unique = true)
 	private String email;
 
 	@Column(length = 20)
@@ -39,10 +39,12 @@ public class Patient {
 	@Column(length = 25)
 	String lastName;
 
-	@Column(length = 15)
+//	@Column(length = 15, unique = true)
+	@Column(length = 18)
 	String mobileNumber;
 
-	@Column(length = 15)
+//	@Column(length = 15, unique = true)
+	@Column(length = 18)
 	String alternateMobileNumber;
 
 	@Enumerated(EnumType.STRING)
@@ -57,25 +59,25 @@ public class Patient {
 	private LocalDate dob;
 
 	// Patient has hobbies
-	@ElementCollection//(fetch = FetchType.EAGER) // mandatory to specify that foll is collection of basic type
+	@ElementCollection // (fetch = FetchType.EAGER) // mandatory to specify that foll is collection of
+						// basic type
 	@CollectionTable(name = "patient_hobbies", joinColumns = @JoinColumn(name = "patient_id"), uniqueConstraints = @UniqueConstraint(columnNames = {
 			"patient_id", "hobby" }))
 	@Column(name = "hobby", length = 40)
 	private List<String> hobbies = new ArrayList<>();
 
-	@OneToOne//(fetch = FetchType.EAGER)
+	@OneToOne // (fetch = FetchType.EAGER)
 	@JoinColumn(name = "login_id")
 //	  @MapsId 
 	private Login login;
-	
+
 //	@OneToMany//(fetch = FetchType.EAGER)
 //	@JoinColumn(name = "address_id")
-	@OneToMany(
-	        cascade = CascadeType.ALL,
-	        orphanRemoval = true,
-	        fetch = FetchType.EAGER
-	    )
-	@JoinColumn(name="patient_id")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@JoinColumn(name = "patient_id")
 	private Set<PatientAddress> address;
+
+	@Lob
+	private byte[] profileImgDB;
 
 }

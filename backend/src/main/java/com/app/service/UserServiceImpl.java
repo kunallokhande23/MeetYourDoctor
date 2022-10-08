@@ -106,6 +106,12 @@ public class UserServiceImpl implements UserService {
 		userEntity.setPassword(encoder.encode(user.getPassword()));
 		// 4 : Save user details
 		Login persistentUser = loginRepo.save(userEntity);
+		SimpleMailMessage mesg = new SimpleMailMessage();
+		mesg.setTo(persistentUser.getEmail());
+		mesg.setSubject("Congratulations you are registered successfully ");
+		mesg.setText("Hello Admin"
+				+ ",\nYou are successfully registered !!!!!\n\nRegards,\nMeet Your Doctor Team");
+		sender.send(mesg);
 		return new UserRegResponse("User registered successfully with ID " + persistentUser.getId());
 	}
 

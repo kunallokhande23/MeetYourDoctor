@@ -31,7 +31,6 @@ insert into roles values(default, "ROLE_DOCTOR");
 select * from roles;
 select * from login;
 select * from user_roles;
-select * from otp;
 
 select * from doctor_addresses;
 select * from doctors;

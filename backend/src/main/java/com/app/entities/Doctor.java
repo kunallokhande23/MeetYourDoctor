@@ -34,7 +34,7 @@ public class Doctor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long doctorId;
 
-	@Column(length = 35)
+	@Column(length = 35, unique = true)
 	private String email;
 
 	@Column(name = "first_name", length = 20)
@@ -43,19 +43,20 @@ public class Doctor {
 	@Column(name = "last_name", length = 25)
 	private String lastName;
 
-	@Column(name = "mobile_number", length = 15)
+//	@Column(name = "mobile_number", length = 18, unique = true)
+	@Column(name = "mobile_number", length = 18)
 	private String mobileNumber;
 
 //	@JsonIgnore
-	@Column(length = 12)
+	@Column(length = 12, unique = true)
 	private String aadharNo;
 
 	@Column(length = 250)
 	private String profilePicture;
 
-	
 //	@Pattern(regexp="({13})")
-	@Column(length = 15)
+//	@Column(length = 18, unique = true)
+	@Column(length = 18)
 	private String alternateMobileNumber;
 
 	@Column(length = 30)
@@ -91,35 +92,30 @@ public class Doctor {
 
 //	@OneToMany(fetch = FetchType.EAGER, mappedBy = "doctor")
 //	@JoinColumn(name = "address_id")
-	
+
 //	@OneToMany(
 //	        cascade = CascadeType.ALL,
 //	        orphanRemoval = true
 //	    )
 //	@JoinColumn(name="doctor_id")
 //	private Set<Address> address;
-	
+
 	@JsonIgnore
 	@OneToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "login_id")
 //	@PrimaryKeyJoinColumn
 	private Login login;
-	
-	@OneToMany(
-	        cascade = CascadeType.ALL,
-	        orphanRemoval = true,
-	        fetch = FetchType.EAGER
-	    )
-	@JoinColumn(name="doctor_id")
+
+	@Lob
+	private byte[] profileImgDB;
+
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@JoinColumn(name = "doctor_id")
 	private Set<DoctorTimeTable> timetables;
-	@OneToMany(
-	        cascade = CascadeType.ALL,
-	        orphanRemoval = true,
-	        fetch = FetchType.EAGER
-	    )
-	@JoinColumn(name="doctor_id")
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@JoinColumn(name = "doctor_id")
 	private Set<Address> address;
-	
+
 //	@JsonIgnore
 //	@OneToOne(mappedBy = "doctor",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //	@JoinColumn(name = "bank_acct_id")

@@ -1,17 +1,17 @@
 # Meet Your Doctor- Web Portal
-# PG-DAC Final Project
 <div>
   <img src="https://github.com/devicons/devicon/blob/master/icons/java/java-original-wordmark.svg" title="Java" alt="Java" width="40" height="40"/>&emsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40" height="40"/>&emsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/spring/spring-original-wordmark.svg" title="Spring" alt="Spring" width="40" height="40"/>&emsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain-wordmark.svg"  title="CSS3" alt="CSS" width="40" height="40"/>&emsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg" title="HTML5" alt="HTML" width="40" height="40"/>&emsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&emsp;	
-  <img title="MySQL" alt="MySQL" src="https://raw.githubusercontent.com/Thomas-George-T/Thomas-George-T/master/assets/mysql.svg" width="40" height="40" style="vertical-align:down; margin:4px"/>&emsp;
-  <img title="Git" alt="Git" src="https://raw.githubusercontent.com/Thomas-George-T/Thomas-George-T/master/assets/git.svg" width="70" height="40" style="vertical-align:down; margin:4px"/>&emsp;
-	<img title="AWS" alt="AWS" src="https://raw.githubusercontent.com/Thomas-George-T/Thomas-George-T/master/assets/aws.svg" width="60" height="40" style="vertical-align:down; margin:4px"/>&emsp;
-
-</div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&emsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original-wordmark.svg" title="MySQL"  alt="MySQL" width="40" height="40"/>&emsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" title="AWS" alt="AWS" width="40" height="40"/>&emsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original-wordmark.svg" title="Git" **alt="Git" width="40" height="40"/>
+</div><br>
+<a href="http://www.meetyourdoctor.co.in" target="_blank">Visit Website</a><br>
+<a href="http://meetyourdoctor.co.in:8080/swagger-ui/index.html" target="_blank">Check Rest API</a><br>
 
 # Features
 1. Localization based on Geography
@@ -117,7 +117,7 @@ Display Payment UI & Checkout
 ```bash
             const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js");
             const options = {
-            key: "rzp_test_avqPqvBNedSxPH", // Enter the Key ID generated from the Dashboard
+            key: "your_key", // Enter the Key ID generated from the Dashboard
             amount: amount.toString(),
             currency: "INR",
             name: ``,
@@ -185,4 +185,6 @@ Display Payment UI & Checkout
 
 ## Support
 
-For support, email kunallokhande23@gmail.com
+For support, email omkarmohite505@gmail.com
+
+
