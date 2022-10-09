@@ -188,6 +188,6 @@ Display Payment UI & Checkout
 
 ## Support
 
-For support, email kunallokhande23@gmail.com
+[![Gmail Badge](https://img.shields.io/badge/-kunallokhande23@gmail.com-c14438?style=flat&logo=Gmail&logoColor=white)](mailto:kunallokhande23@gmail.com "Connect via Email")
 
 
