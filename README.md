@@ -13,7 +13,7 @@
 </div>
 
 # Website
-<a href="http://www.meetyourdoctor.co.in" target="_blank">Visit Website</a><br>
+<a target="_blank" rel="myd" href="http://www.meetyourdoctor.co.in">Visit Website</a><br>
 <a href="http://meetyourdoctor.co.in:8080/swagger-ui/index.html" target="_blank">Check Rest API</a><br>
 
 # Features
